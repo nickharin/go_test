@@ -6,9 +6,7 @@ import (
 )
 
 func init() {
-	if runtime.GOARCH == "386" {
-		runtime.GOMAXPROCS(1)
-	}
+	runtime.GOMAXPROCS(1)
 }
 
 func main() {
