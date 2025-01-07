@@ -1,9 +1,9 @@
-package go_test
+package main
 
 import (
 	"fmt"
 )
 
 func main() {
-	fmt.Println("Hello World \n Привет катюха")
+	fmt.Println("Hello World \nПривет катюха")
 }
