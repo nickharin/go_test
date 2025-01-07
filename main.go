@@ -10,5 +10,5 @@ func init() {
 }
 
 func main() {
-	fmt.Print("Hello World")
+	fmt.Println("Hello World \n Привет катюха")
 }
