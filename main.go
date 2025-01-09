@@ -1,9 +1,26 @@
 package main
 
 import (
-	"fmt"
+	"bluetooth"
 )
 
+var adapter = bluetooth.DefaultAdapter
+
 func main() {
-	fmt.Println("Hello World \nПривет катюха")
+	// Enable BLE interface.
+	must("enable BLE stack", adapter.Enable())
+
+	// Start scanning.
+	println("scanning...")
+	err := adapter.Scan(func(adapter *bluetooth.Adapter, device bluetooth.ScanResult) {
+		println("found device:", device.Address.String(), device.RSSI, device.LocalName(), device.ManufacturerData())
+	})
+	adapter.Address()
+	must("start scan", err)
+}
+
+func must(action string, err error) {
+	if err != nil {
+		panic("failed to " + action + ": " + err.Error())
+	}
 }
