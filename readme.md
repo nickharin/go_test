@@ -3,7 +3,7 @@
 
 ## on macOS
 ``
-$ CC=i686-linux-musl-gcc \
+CC=i686-linux-musl-gcc \
     CGO_ENABLED=1 \
     GOOS=linux \
     GOARCH=386 \
@@ -13,5 +13,5 @@ $ CC=i686-linux-musl-gcc \
 ``
 ## on iSH
 ``
-$ GOMAXPROCS=1 ./ish-go-demo
+GOMAXPROCS=1 ./ish-go-demo
 ``
